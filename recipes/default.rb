@@ -19,12 +19,6 @@
 
 require_recipe "php"
 
-e = execute "pear upgrade" do
-  action :nothing
-end
-
-e.run_action(:run)
-
 %w{ pear.phpunit.de components.ez.no }.each do |channel|
   php_pear_channel channel do
     action :discover
